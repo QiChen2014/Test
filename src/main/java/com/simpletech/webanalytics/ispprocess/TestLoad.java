@@ -9,8 +9,10 @@ import java.io.FileNotFoundException;
 public class TestLoad {
     public static void main(String []args){
         String addr = "210.40.2.236";
-        IPLoad load=new IPLoad();
-        ISPParse isp=new ISPParse();
+//        IPLoad load=new IPLoad();
+        ISPParse ispParse=new ISPParse();
+        String isp=IspParser.ispParser(addr);
+        System.out.println(isp);
 //        try {
 //            List<IPModel> listIP=load.fileLoad();
 //
@@ -22,7 +24,7 @@ public class TestLoad {
 //            System.err.println("文件不存在");
 //        }
         try {
-            isp.ispParser(addr);
+            ispParse.ispParser(addr);
         }catch (FileNotFoundException e){
             e.printStackTrace();
         }

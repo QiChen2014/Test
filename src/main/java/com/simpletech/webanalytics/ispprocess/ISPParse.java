@@ -12,7 +12,7 @@ import java.util.*;
 public class ISPParse {
     // 用来做为cache，查询一个ip时首先查看cache，以减少不必要的重复查找
     private Map<Long[], IPModel> ipCache;
-    private String path = "src/main/resources/t_ip.txt";
+    private String path = "src/main/resources/ip-isp.txt";
 
 
     public IPModel ispParser(String addr) throws FileNotFoundException {
@@ -63,12 +63,10 @@ public class ISPParse {
         Set<Long[]> set = ipCache.keySet();
         //计算出ip地址对应的长整数
         long ipnum = ipcalc.validateIP(addr);
-        String isp = null;
+        String isp;
         System.out.println("ip:" + addr + "=>num:" + ipnum);
         //查找ip对应的记录
         for (Long[] num : set) {
-
-
             if (ipnum >= num[0] && ipnum <= num[1]) {
                 model = ipCache.get(num);
                 list.add(model);

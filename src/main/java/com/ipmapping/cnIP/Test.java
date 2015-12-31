@@ -14,7 +14,7 @@ public class Test {
 //        RandomIP rdIP=new RandomIP();
 //        String ip=rdIP.getRandomIp();
         IPCalculate ipCalculate=new IPCalculate();
-        long num=ipCalculate.validateIP("10.33.46.60");
+        long num=ipCalculate.validateIP("210.0.0.0");
 
 //        String str=ip+"\t"+num;
 //        File writer=new File("E:\\ipCompare.txt");

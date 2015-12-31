@@ -16,6 +16,7 @@ public class IspParser {
     // 用来做为cache，查询一个ip时首先查看cache，以减少不必要的重复查找
     private static Map<Long[], String> dataBuffer;
 
+    //线程同步
     public synchronized static void load(String resource, String charset) {
         if (dataBuffer == null) {
             Map<Long[], String> buffer = new HashMap<>();//存储ip和相应ip信息
